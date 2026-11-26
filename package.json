@@ -1,0 +1,57 @@
+{
+  "name": "dsh-xmfu-nai",
+  "version": "1.0.2",
+  "type": "module",
+  "description": "XMFU 公共 API 出图插件：在 DSH 里用 pst-xmfu- Key 调用 api.xmfu.cn/v1 文生图 / 参考图编辑，带锅巴估算确认守卫、任务轮询和同源图片服务。",
+  "keywords": [
+    "deepseek-harness",
+    "dsh-plugin",
+    "image-generation",
+    "novelai",
+    "xmfu"
+  ],
+  "main": "lib/index.js",
+  "exports": {
+    ".": "./lib/index.js",
+    "./client": "./lib/client.js",
+    "./cordis.patch.yml": "./cordis.patch.yml",
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "lib",
+    "scripts",
+    "cordis.patch.yml",
+    "README.md",
+    "INSTALL.md",
+    "LICENSE",
+    "install-xmfu-nai.ps1"
+  ],
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    },
+    "client": {
+      "platform": "web",
+      "inject": []
+    }
+  },
+  "license": "MIT",
+  "peerDependencies": {
+    "@deepseek-ai/cordis": "^4.0.1",
+    "react": "^18.3.1"
+  },
+  "peerDependenciesMeta": {
+    "@deepseek-ai/cordis": {
+      "optional": true
+    },
+    "react": {
+      "optional": true
+    }
+  },
+  "scripts": {
+    "check": "node --check lib/index.js && node --check lib/client.js && node --check scripts/smoke.mjs",
+    "smoke": "node scripts/smoke.mjs"
+  },
+  "author": "dsh-xmfu-nai contributors",
+  "homepage": "https://www.xmfu.cc/app#studio"
+}
