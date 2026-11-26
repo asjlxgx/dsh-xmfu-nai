@@ -1,0 +1,4 @@
+# dsh-xmfu-nai bundle 补丁层：把裸包名插进 profile，网页端才能读到 dsh.client 字段并加载设置页。
+- insert:
+    - id: xmfu-nai
+      name: dsh-xmfu-nai
